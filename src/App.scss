@@ -1,0 +1,63 @@
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.ButtonGroup {
+  border-radius: 4px;
+  background: rgb(70, 70, 255);
+  color: white;
+  margin: 0px -10px;    
+  text-align: center;
+
+  h2 {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .Buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  button {
+    appearance: none;
+    background: none;
+    height: 56px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      border-right: 1px solid white;
+    }
+
+    &:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    &:focus {
+      outline: 2px solid rgba(0,0,0,1);
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+h1 {
+  font-size: 32px;
+}
+
+* {
+  box-sizing: border-box;
+}

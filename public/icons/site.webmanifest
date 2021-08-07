@@ -1,0 +1,21 @@
+{
+    "name": "Split Calc",
+    "short_name": "Rowing Split Calculator",
+    "icons": [
+        {
+            "src": "android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": ".",
+    "theme_color": "#75b6e5",
+    "background_color": "#3c3c3b",
+    "display": "standalone",
+    "scope": "."
+}
