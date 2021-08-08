@@ -47,7 +47,11 @@ function App() {
 
   function addHistory(dis, tim, spl) {
     setHistoryId(historyId + 1);
-    setHistory([...history, { id: historyId, distance: dis, time: tim, split: spl }]);
+    setHistory([...history, { id: historyId, distance: dis, time: round(tim), split: round(spl) }]);
+  }
+
+  function round(num) {
+    return Math.round(num * 10) / 10;
   }
 
   function is420(seconds) {
