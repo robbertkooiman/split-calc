@@ -6,6 +6,7 @@ import History from './History';
 import { useEffect, useState } from 'react';
 import Button from './Button';
 import ButtonGroup from './ButtonGroup';
+import Footer from './Footer';
 
 const SPLIT_DISTANCE = 500;
 
@@ -108,6 +109,7 @@ function App() {
         <Button onClick={calculateSplit}>Split</Button>
       </ButtonGroup>
       <History history={history}></History>
+      <Footer></Footer>
     </div >
   );
 }
