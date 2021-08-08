@@ -47,7 +47,9 @@ function App() {
 
   function addHistory(dis, tim, spl) {
     setHistoryId(historyId + 1);
-    setHistory([...history, { id: historyId, distance: dis, time: round(tim), split: round(spl) }]);
+    const item = { id: historyId, distance: dis, time: round(tim), split: round(spl) };
+    item.comments = checkForMemes(item);
+    setHistory([...history, item]);
   }
 
   function round(num) {
@@ -64,21 +66,16 @@ function App() {
 
   function checkForMemes(item) {
     const comments = {};
-    if (Math.floor(item.distance) % 3600 === 4 * 60 + 20) {
-      // 420
+    if (Math.floor(item.time) === 4 * 3600 + 20 * 60 || Math.floor(item.time) % 3600 === 4 * 60 + 20) {
+      comments.time = 'nice';
     }
     if (Math.floor(item.split) % 3600 === 4 * 60 + 20) {
-      // 420
+      comments.split = 'nice';
     }
-    if (Math.floor(item.time) % 3600 === 4 * 60 + 20) {
-      // 420
+    if (distance === 69) {
+      comments.distance = 'nice';
     }
-    if (Math.floor(item.split) % 3600 === 4 * 60 + 20) {
-      // 420
-    }
-    if (Math.floor(item.time) % 3600 === 4 * 60 + 20) {
-      // 420
-    }
+    return comments;
   }
 
   function clearAll() {
