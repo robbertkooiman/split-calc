@@ -12,6 +12,8 @@ function Input({ name, title, onChange, value }) {
                 SS = pad(SS);
             }
             setDuration({ 'MM': MM, 'SS': SS });
+        } else {
+            setDuration({ 'MM': '', "SS": '' })
         }
     }, [value]);
 
@@ -42,7 +44,7 @@ function Input({ name, title, onChange, value }) {
                 <label htmlFor={name + "MM"}>Minutes</label>
             </div>
             <div className="Input Large">
-                <input id={name + "SS"} type="text" name={name} value={duration.SS} placeholder="00.0" onChange={e => addDuration({ 'SS': e.target.value })} className="LeftAlign"></input>
+                <input id={name + "SS"} type="number" name={name} value={duration.SS} placeholder="00.0" onChange={e => addDuration({ 'SS': e.target.value })} className="LeftAlign"></input>
                 <label htmlFor={name + "SS"}>Seconds</label>
             </div>
         </div>

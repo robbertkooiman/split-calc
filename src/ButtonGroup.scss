@@ -1,0 +1,16 @@
+.ButtonGroup {
+    color: white;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .Button {
+        border-radius: 0;
+        height: 56px;
+    }
+    .Button:first-child {
+        border-radius: 8px 0 0 8px;
+    }
+    .Button:last-child {
+        border-radius: 0 8px 8px 0;
+    }
+  }

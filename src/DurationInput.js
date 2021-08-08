@@ -16,6 +16,8 @@ function Input({ name, title, onChange, value }) {
                 SS = pad(SS);
             }
             setDuration({ 'HH': HH, 'MM': MM, 'SS': SS });
+        } else {
+            setDuration({ 'HH': '', 'MM': '', 'SS': '' });
         }
     }, [value]);
 

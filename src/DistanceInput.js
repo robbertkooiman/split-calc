@@ -9,6 +9,8 @@ function Input({ name, title, type, placeholder, onChange, value }) {
     useEffect(() => {
         if (!!value) {
             setDistance(Math.round(value) + 'm');
+        } else {
+            setDistance('');
         }
     }, [value]);
 
@@ -18,7 +20,7 @@ function Input({ name, title, type, placeholder, onChange, value }) {
     }
 
     function getDistance(input) {
-        const regex = /(\d?\.?\d+) ?(km|mi|k|m)$/
+        const regex = /(\d?\.?\d+) ?(km|mi|k|m)$/i
         const match = input.match(regex);
         if (match) {
             const unit = match[2].toLowerCase();
