@@ -45,23 +45,27 @@ function App() {
     }
   }
 
+  function calculateWatts(split) {
+    console.log(split);
+    return 2.8 / Math.pow(split / 500, 3);
+  }
+
+  function addWatts(item) {
+    const comments = {};
+    comments.split = round(calculateWatts(item.split)) + 'W';
+    return comments;
+  }
+
   function addHistory(dis, tim, spl) {
     setHistoryId(historyId + 1);
-    const item = { id: historyId, distance: dis, time: round(tim), split: round(spl) };
-    item.comments = checkForMemes(item);
+    const item = { id: historyId, distance: dis, time: round(tim), split: round(spl)};
+    item.comments = {...checkForMemes(item), ...addWatts(item)};
+    console.log(item);
     setHistory([...history, item]);
   }
 
   function round(num) {
     return Math.round(num * 10) / 10;
-  }
-
-  function is420(seconds) {
-    return (Math.floor(seconds) % 3600 === 4 * 60 + 20);
-  }
-
-  function is69(seconds) {
-    return (Math.floor(seconds) % 3600 === 69);
   }
 
   function checkForMemes(item) {
