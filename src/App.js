@@ -66,13 +66,14 @@ function App() {
 
   function checkForMemes(item) {
     const comments = {};
+    console.log(item);
     if (Math.floor(item.time) === 4 * 3600 + 20 * 60 || Math.floor(item.time) % 3600 === 4 * 60 + 20) {
       comments.time = 'nice';
     }
     if (Math.floor(item.split) % 3600 === 4 * 60 + 20) {
       comments.split = 'nice';
     }
-    if (distance === 69) {
+    if (item.distance === '69') {
       comments.distance = 'nice';
     }
     return comments;
