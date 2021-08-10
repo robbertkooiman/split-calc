@@ -1,7 +1,7 @@
-import './App.scss';
 import DurationInput from './DurationInput';
 import SplitInput from './SplitInput';
 import DistanceInput from './DistanceInput';
+import './App.scss';
 import History from './History';
 import { useEffect, useState } from 'react';
 import Button from './Button';
@@ -59,8 +59,8 @@ function App() {
 
   function addHistory(dis, tim, spl) {
     setHistoryId(historyId + 1);
-    const item = { id: historyId, distance: dis, time: round(tim), split: round(spl)};
-    item.comments = {...checkForMemes(item), ...addWatts(item)};
+    const item = { id: historyId, distance: dis, time: round(tim), split: round(spl) };
+    item.comments = { ...checkForMemes(item), ...addWatts(item) };
     console.log(item);
     setHistory([...history, item]);
   }
@@ -102,7 +102,7 @@ function App() {
       <DistanceInput value={calcDistance} name="distance" type="text" title="Distance" placeholder="0000" onChange={e => setDistance(e)} />
       <DurationInput value={calcTime} name="time" type="duration" title="Time" pattern="[\d\:\.]*" onChange={e => setTime(e)} />
       <SplitInput value={calcSplit} name="split" type="split" title="Split / 500m" pattern="[\d\:\.]*" onChange={e => setSplit(e)} />
-      <p className="ClearButton"><Button href="javascript:void(0)" onClick={clearAll} className="Warning">clear all</Button></p>
+      <p className="ClearButton"><Button href={void(0)} onClick={clearAll} className="Warning">clear all</Button></p>
       <ButtonGroup>
         <Button onClick={calculateTime}>Time</Button>
         <Button onClick={calculateDistance}>Distance</Button>
