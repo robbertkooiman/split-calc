@@ -1,6 +1,7 @@
 {
-    "name": "Split Calc",
-    "short_name": "Rowing Split Calculator",
+    "name": "Rowing Split Calculator",
+    "short_name": "Split Calc",
+    "description": "A simple calculator for split pace over 500m, a popupar pacing method for rowers in boats or on ergometers.",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
