@@ -10,14 +10,22 @@ function History({ history }) {
         return formatted;
     }
 
+    function formatDistance(meters) {
+        if (meters % 1000 === 0) {
+            const km = meters/1000;
+            return km + 'k';
+        }
+        return meters + 'm';
+    }
+
     return (
         <div className="History">
             <table>
                 <tbody>
                     {history.reverse().map(item =>
                         <tr key={item.id}>
-                            <td>{formatTime(item.time)} {item.comments.time ? <p className="Comment">{item.comments.time}</p> : null}</td>
-                            <td>{item.distance} {item.comments.distance ? <p className="Comment">{item.comments.distance}</p> : null}</td>
+                            <td>{formatTime(item.time, true)} {item.comments.time ? <p className="Comment">{item.comments.time}</p> : null}</td>
+                            <td>{formatDistance(item.distance)} {item.comments.distance ? <p className="Comment">{item.comments.distance}</p> : null}</td>
                             <td>{formatTime(item.split, true)} {item.comments.split ? <p className="Comment">{item.comments.split}</p> : null}</td>
                         </tr>
                     )}
