@@ -40,6 +40,19 @@
         gap: 30px;
         grid-template-columns: 1fr 1fr 1fr;
 
+        .Input {
+            &:not(:last-child) {
+                &::after {
+                    display: block;
+                    position: absolute;
+                    top: 6px;
+                    font-size: 28px;
+                    right: -18px;
+                    content: ':';
+                }
+            }
+        }
+
         .Large {
             grid-column: span 2;
         }
