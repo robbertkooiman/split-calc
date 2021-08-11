@@ -11,6 +11,7 @@ function History({ history }) {
     }
 
     function formatDistance(meters) {
+        meters = Math.round(meters);
         if (meters % 1000 === 0) {
             const km = meters/1000;
             return km + 'k';
