@@ -22,6 +22,7 @@
         border: 1px solid $border;
         background: inherit;
         color: $foreground;
+        font-family: $fonts;
 
         &:hover, &:focus {
             border-width: 2px;
