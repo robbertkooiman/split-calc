@@ -1,6 +1,6 @@
 {
   "name": "split-calc",
-  "version": "5.3.1",
+  "version": "5.3.2",
   "description": "A simple calculator for split pace over 500m, a popupar pacing method for rowers in boats or on ergometers.",
   "private": true,
   "dependencies": {
