@@ -64,7 +64,19 @@ function App() {
   function addPowerToWeight(item) {
     const comments = {};
     if (item.weight) {
-      comments.distance = (calculateWatts(item.split) / item.weight).toFixed(2) + " W/kg";
+      comments.distance =
+        (calculateWatts(item.split) / item.weight).toFixed(2) + " W/kg";
+    }
+    return comments;
+  }
+
+  function addPowerToWeightInEight(item) {
+    const comments = {};
+    if (item.weight) {
+      comments.time =
+        (calculateWatts(item.split) / (item.weight + (96 + 55) / 8)).toFixed(
+          2
+        ) + " W/kg for 8+";
     }
     return comments;
   }
@@ -82,6 +94,7 @@ function App() {
       ...checkForMemes(item),
       ...addWatts(item),
       ...addPowerToWeight(item),
+      ...addPowerToWeightInEight(item),
     };
     setHistory([...history, item]);
   }
