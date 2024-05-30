@@ -23,7 +23,7 @@ function History({ history }) {
         <div className="History">
             <table>
                 <tbody>
-                    {history.reverse().map(item =>
+                    {history.map(item =>
                         <tr key={item.id}>
                             <td>{formatTime(item.time, true)} {item.comments.time ? <p className="Comment">{item.comments.time}</p> : null}</td>
                             <td>{formatDistance(item.distance)} {item.comments.distance ? <p className="Comment">{item.comments.distance}</p> : null}</td>

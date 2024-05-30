@@ -1,18 +1,9 @@
-$background: rgb(32, 32, 32);
+$background: #202020;
 $foreground: rgb(230, 230, 230);
 $border: rgba(255, 255, 255, 0.12);
 $primary: #a34900;
 $warning: #990026;
 $primary-light: #eb6b20;
-$fonts: 'Rubik',
--apple-system,
-BlinkMacSystemFont,
-'Segoe UI',
-'Roboto',
-'Oxygen',
-'Ubuntu',
-'Cantarell',
-'Fira Sans',
-'Droid Sans',
-'Helvetica Neue',
-sans-serif;
+$fonts: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
